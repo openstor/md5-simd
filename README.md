@@ -5,7 +5,7 @@ This is a SIMD accelerated MD5 package, allowing up to either 8 (AVX2) or 16 (AV
 
 It was originally based on the [md5vec](https://github.com/igneous-systems/md5vec) repository by Igneous Systems, but has been made more flexible by amongst others supporting different message sizes per lane and adding AVX512.
 
-`md5-simd` integrates a similar mechanism as described in [minio/sha256-simd](https://github.com/minio/sha256-simd#support-for-avx512) for making it easy for clients to take advantages of the parallel nature of the MD5 calculation. This will result in reduced overall CPU load. 
+`md5-simd` integrates a similar mechanism as described in [openstor/sha256-simd](https://github.com/openstor/sha256-simd#support-for-avx512) for making it easy for clients to take advantages of the parallel nature of the MD5 calculation. This will result in reduced overall CPU load. 
 
 It is important to understand that `md5-simd` **does not speed up** a single threaded MD5 hash sum. 
 Rather it allows multiple __independent__  MD5 sums to be computed in parallel on the same CPU core, 
@@ -13,7 +13,7 @@ thereby making more efficient usage of the computing resources.
 
 ## Usage
 
-[![Documentation](https://godoc.org/github.com/minio/md5-simd?status.svg)](https://pkg.go.dev/github.com/minio/md5-simd?tab=doc)
+[![Documentation](https://godoc.org/github.com/openstor/md5-simd?status.svg)](https://pkg.go.dev/github.com/openstor/md5-simd?tab=doc)
 
 
 In order to use `md5-simd`, you must first create an `Server` which can be 
@@ -39,8 +39,8 @@ As an example:
     digest := md5Hash.Sum([]byte{})
 ```
 
-To keep performance both a [Server](https://pkg.go.dev/github.com/minio/md5-simd?tab=doc#Server) 
-and individual [Hasher](https://pkg.go.dev/github.com/minio/md5-simd?tab=doc#Hasher) should 
+To keep performance both a [Server](https://pkg.go.dev/github.com/openstor/md5-simd?tab=doc#Server) 
+and individual [Hasher](https://pkg.go.dev/github.com/openstor/md5-simd?tab=doc#Hasher) should 
 be closed using the `Close()` function when no longer needed.
 
 A Hasher can efficiently be re-used by using [`Reset()`](https://pkg.go.dev/hash?tab=doc#Hash) functionality.

@@ -1,8 +1,9 @@
-//+build !noasm,!appengine,gc
+//go:build !noasm && !appengine && gc
+// +build !noasm,!appengine,gc
 
-// Copyright (c) 2020 MinIO Inc. All rights reserved.
-// Use of this source code is governed by a license that can be
-// found in the LICENSE file.
+// SPDX-FileCopyrightText: 2025 openstor contributors
+// SPDX-FileCopyrightText: 2015-2025 MinIO, Inc.
+// SPDX-License-Identifier: Apache-2.0-or-later
 
 package md5simd
 
